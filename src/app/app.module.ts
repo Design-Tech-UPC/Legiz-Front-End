@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
-
 import { CasesComponent } from './cases/pages/cases/cases.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -18,6 +18,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { LayersComponent } from './layers/pages/layers/layers.component';
 import {MatSortModule} from "@angular/material/sort";
+import { SpecializationsComponent } from './public/specializations/specializations.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -25,26 +27,26 @@ import {MatSortModule} from "@angular/material/sort";
     CasesComponent,
     HomeComponent,
     AboutComponent,
-    LayersComponent
+    LayersComponent,
+    SpecializationsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-
-    MatInputModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSortModule
-
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatInputModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatSortModule,
+        MatCardModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
