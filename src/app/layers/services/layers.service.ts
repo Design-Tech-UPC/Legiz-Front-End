@@ -9,12 +9,15 @@ import {catchError, retry} from "rxjs/operators";
 })
 export class LayersService {
   // Layers Endpoint
-  basePath = 'http://localhost:3000/api/layers';
+  basePath = 'http://190.117.53.147:2907';
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-    })
+      "Access-Control-Allow-Origin":  "http://localhost:4200/",
+      "Access-Control-Allow-Methods": "GET POST OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization"
+})
   }
   constructor(private http: HttpClient) { }
 
@@ -43,7 +46,7 @@ export class LayersService {
 
   // Get Layer by id
   getById(id: any): Observable<Layer> {
-    return this.http.get<Layer>(`${this.basePath}/${id}`, this.httpOptions)
+    return this.http.get<Layer>(`${this.basePath}/api/lawyer/typespecialty/${id}/lawyers?page=0&size=1`, this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));

@@ -15,7 +15,7 @@ import { MatSort } from "@angular/material/sort";
 export class LayersComponent implements OnInit, AfterViewInit {
   layerData: Layer;
   dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', "name", "surname", "email", "birthday", "phone", "tuition", "specialty", "actions"];
+  displayedColumns: string[] = ['id', "name", "surname", "email", "birthday", "dni", "actions"];
 
   @ViewChild('layerForm', {static: false})
   layerForm!: NgForm;
@@ -39,12 +39,21 @@ export class LayersComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
-    this.getAllLayers();
+    //this.getAllLayers();
+    this.getByIdLayers();
   }
 
   getAllLayers() {
     this.layersServices.getAll().subscribe((response: any) => {
       this.dataSource.data = response;
+
+    });
+  }
+
+  getByIdLayers() {
+    this.layersServices.getById(1).subscribe((response: any) => {
+      this.dataSource.data = response.content;
+      console.log(response);
     });
   }
 

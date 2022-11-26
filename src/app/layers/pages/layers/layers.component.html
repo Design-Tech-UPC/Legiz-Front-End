@@ -19,19 +19,15 @@
     </ng-container>
     <ng-container matColumnDef="birthday">
       <th mat-header-cell *matHeaderCellDef> Birthday Date</th>
-      <td mat-cell *matCellDef="let element">{{ element.birthday }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.date_Birthday }}</td>
     </ng-container>
-    <ng-container matColumnDef="phone">
-      <th mat-header-cell *matHeaderCellDef> Phone Number</th>
-      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
-    </ng-container>
-    <ng-container matColumnDef="tuition">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tuition</th>
-      <td mat-cell *matCellDef="let element">{{ element.tuition }}</td>
+    <ng-container matColumnDef="dni">
+      <th mat-header-cell *matHeaderCellDef> DNI Number</th>
+      <td mat-cell *matCellDef="let element">{{ element.dni }}</td>
     </ng-container>
     <ng-container matColumnDef="specialty">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Specialty</th>
-      <td mat-cell *matCellDef="let element">{{ element.specialty }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.typeSpecialtyId }}</td>
     </ng-container>
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>

@@ -1,4 +1,4 @@
-export interface Layer {
+/*export interface Layer {
   id: number;
   name: string;
   surname: string;
@@ -7,4 +7,16 @@ export interface Layer {
   phone: number;
   tuition: number;
   specialty: string;
+}*/
+
+export interface Layer {
+  id: number;
+  nameSpecialty: number;
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
+  date_Birthday: string;
+  dni: number;
+  typeSpecialtyId: number;
 }
